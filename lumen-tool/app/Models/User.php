@@ -13,13 +13,23 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 {
     use Authenticatable, Authorizable, HasFactory;
 
+    const ADMIN_ROLE = 1;
+    const USER_ROLE = 2;
+
+    const ANDROID_DEVICE_TYPE = 1;
+    const IOS_DEVICE_TYPE = 2;
+    const WEB_DEVICE_TYPE = 3;
     /**
      * The attributes that are mass assignable.
      *
-     * @var string[]
+     * @var array<int, string>
      */
     protected $fillable = [
-        'name', 'email',
+        'name',
+        'email',
+        'role',
+        'password',
+        'timezone'
     ];
 
     /**
