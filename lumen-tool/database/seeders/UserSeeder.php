@@ -23,7 +23,6 @@ class UserSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => app('hash')->make('t0ny@2022'),
             'role' => User::ADMIN_ROLE,
-            'remember_token' => Str::random(10),
         ]);
         User::factory()
             ->count(20)
